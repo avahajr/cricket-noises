@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birdcall Synthesizer</title>
+  </head>
+  <body>
+    <h1>Birdcall Synthesizer</h1>
+
+    <button id="startButton">Start Sound</button>
+    <button id="stopButton">Stop Sound</button>
+
+    <script src="bird.js"></script>
+
+    <script>
+      const startButton = document.getElementById("startButton");
+      const stopButton = document.getElementById("stopButton");
+
+      // Add click event listeners to start and stop the sound
+      startButton.addEventListener("click", () => {
+        startBirdcall();
+      });
+
+      stopButton.addEventListener("click", () => {
+        stopBirdcall();
+      });
+    </script>
+  </body>
+</html>

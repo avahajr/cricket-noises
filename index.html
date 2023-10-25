@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <!-- Include Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="./sounds.js"></script>
+  </head>
+
+  <header>
+    <div class="container" style="margin-top: 5rem">
+      <h1>Lab 3</h1>
+      <h5>Computational Sound</h5>
+      <p>Ava Hajratwala</p>
+    </div>
+  </header>
+  <body>
+    <div class="container" style="margin-top: 10px; margin-bottom: 10rem">
+      <h3>Part 1</h3>
+      <hr />
+      <p>
+        In this part, I adapted the following SuperCollider code to JavaScript
+        and the WebAudio API:
+      </p>
+      <div
+        style="display: flex; align-items: center; background-color: aliceblue"
+      >
+        <pre>
+      <code>
+        
+      {RHPF.ar(LPF.ar(BrownNoise.ar(), 400), LPF.ar(BrownNoise.ar(), 14) * 400 + 500, 0.03, 0.1)}.play</code>
+    </pre>
+      </div>
+      <br />
+      <p>Give it a try!</p>
+
+      <button type="button" id="brookButton" class="btn btn-primary">
+        Start babbling brook
+      </button>
+
+      <h3 style="margin-top: 2rem">Part 2</h3>
+      <hr />
+      <div class="row">
+        <div class="col">
+          <p>In this part, I made the sound of crickets in a forest.</p>
+          <p>It turns out this sound is incredibly handy.</p>
+          <p>Why did the programmer quit his job?</p>
+          <button
+            id="cricketButton"
+            class="btn btn-primary"
+            style="margin-right: 0.3rem"
+          >
+            Why?
+          </button>
+          <button id="stopCrickets" hidden class="btn btn-secondary">
+            Stop crickets
+          </button>
+          <h5
+            hidden
+            id="answer"
+            class="animate__lightSpeedInRight"
+            style="margin-top: 2rem"
+          >
+            Because he didn't get arrays.
+          </h5>
+        </div>
+        <div class="col">
+          <canvas
+            id="globalVisualizer"
+            width="300"
+            height="170"
+            style="border: 1px solid #00000020"
+            >wave form visualizer</canvas
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
