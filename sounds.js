@@ -18,6 +18,7 @@ Arguments:
   mul: Output will be multiplied by this value.
   add: This value will be added to the output.
 
+  ready for pages.
 */
 var globalAnalyser;
 var audioCtx;
