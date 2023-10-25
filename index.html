@@ -27,7 +27,7 @@
     </div>
   </header>
   <body>
-    <div class="container" style="margin-top: 10px; margin-bottom: 10rem">
+    <div class="container" style="margin-top: 10px; margin-bottom: 5rem">
       <h3>Part 1</h3>
       <hr />
       <p>
@@ -76,7 +76,7 @@
             Because he didn't get arrays.
           </h5>
         </div>
-        <div class="col">
+        <div class="text-center col align-self-end">
           <canvas
             id="globalVisualizer"
             width="300"
@@ -86,6 +86,39 @@
           >
         </div>
       </div>
+      <img
+        class="mx-auto d-block"
+        style="
+          margin-top: 5rem;
+          margin-bottom: 5rem;
+          box-shadow: 5px 5px 5px 5px rgba(182, 185, 185, 0.5);
+        "
+        src="./download.png"
+      />
+      <p>This is the Audio Signal flow graph for the cricket sound.</p>
+      <p>
+        The first thing I did was create a white noise buffer and a
+        corresponding GainNode. To implement the "bursts" of sound he talks
+        about in the textbook, I knew I would need some kind of LFO acting on
+        the noise's gain to create a rhythmic pulse. After some testing, I
+        decided on a triangle waveform for the LFO - it sounded the best.
+      </p>
+      <p>
+        At this point, I just had bursts of white noise. Per the high-level
+        description I was referencing, I created a lowpass filter (with a
+        relatively high frequency - 2000) to take the "edge" off of the pulse.
+        Then I fed the output of that filter through a bunch of
+        differently-tuned bandpass filters. Each bandpass filter had a different
+        GainNode associated with it. Lastly, I connected all the bandpass
+        outputs to a highpass filter.
+      </p>
+      <p>
+        The hardest part of this assignment was tuning the parameters of the
+        filters. All of the bandpass filters have the same Q-value (they were
+        initialized in a loop). The Q value is very high because when I set it
+        that high the higher frequencies jumped out of the noise, which it
+        sounded most cricket-like.
+      </p>
     </div>
   </body>
 </html>

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function startBrook() {
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     const globalGain = audioCtx.createGain();
-    globalGain.gain.value = 0.3;
+    globalGain.gain.value = 0.6;
     if (!isPlayingBrook) {
       // LPF that is the input to the RHPF
       LPFInput = audioCtx.createBiquadFilter();
